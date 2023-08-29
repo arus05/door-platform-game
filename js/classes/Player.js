@@ -9,7 +9,7 @@ class Player{
       x: 0,
       y: 0
     }
-    this.gravity = 0.25
+    this.gravity = 0.5
   }
 
   draw(c){
@@ -34,7 +34,7 @@ class Player{
       this.velocity.x = 0
     }
 
-    if(this.position.x < 0){
+    if (this.position.x < 0) {
       this.position.x = 0
       this.velocity.x = 0
     }

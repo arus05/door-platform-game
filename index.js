@@ -1,7 +1,17 @@
-canvas = document.querySelector("canvas")
+/** CANVAS SETUP */
+const canvas = document.querySelector("canvas")
 canvas.width = 16*64
 canvas.height = 9*64
-c = canvas.getContext("2d")
+const c = canvas.getContext("2d")
+
+/** GAME CONFIGURATION */
+const backgroundLevel1 = new Sprite({
+  position: {
+    x: 0,
+    y: 0
+  },
+  imageSrc: "./public/images/backgroundLevel1.png"
+})
 
 const player = new Player({
   position: {
@@ -19,18 +29,26 @@ const keys = {
   },
 }
 
-function animate(){
-  c.fillStyle = "white"
-  c.fillRect(0, 0, canvas.width, canvas.height)
+const collisionBlocks = generateCollisionBlocks(collisions[0])
+
+/** ANIMATION LOOP */
+function animate() {
+  /** DRAWING THE BG */
+  backgroundLevel1.draw(c)
+  collisionBlocks.forEach(block => {
+    block.draw(c)
+  })
+
   player.velocity.x = 0
   if(keys.a.pressed){
-    player.velocity.x = -2
+    player.velocity.x = -4
   }
   if(keys.d.pressed){
-    player.velocity.x = 2
+    player.velocity.x = 4
   }
   player.draw(c)
   player.update(canvas)
+
   window.requestAnimationFrame(animate)
 }
 
