@@ -1,0 +1,2 @@
+const CANVAS_WIDTH = 16 * 64
+const CANVAS_HEIGHT = 9 * 64

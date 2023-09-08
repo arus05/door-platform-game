@@ -23,3 +23,16 @@ const generateCollisionBlocks = (collisions) => {
   })
   return collisionBlocks
 }
+
+const moveToNextLevel = () => {
+  gsap.to(overlay, {
+    opacity: 1,
+    onComplete: () => {
+      level = (level + 1) % TOTAL_LEVELS
+      levels[level].init()
+      gsap.to(overlay, {
+        opacity: 0
+      })
+    }
+  })
+}

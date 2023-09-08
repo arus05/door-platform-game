@@ -6,24 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <!-- Libraries End -->
+
+  <!-- Constants/Global -->
+  <script defer src="js/constants.js"></script>
+  <script defer src="js/global.js"></script>
+  <!-- Constants End -->
+
   <!-- Utils -->
   <script defer src="js/utils.js"></script>
-  <!-- Utils End-->
+  <!-- Utils End -->
 
   <!-- Data -->
   <script defer src="data/collisions.js"></script>
+  <script defer src="data/animation.js"></script>
   <!-- Data End -->
   
   <!-- Scripts -->
+  <script defer src="js/canvas.js"></script>
   <script defer src="js/classes/CollisionBlock.js"></script>
   <script defer src="js/classes/Sprite.js"></script>
   <script defer src="js/classes/Player.js"></script>
   <script defer src="js/eventListeners.js"></script>
+  <script defer src="js/levels.js"></script>
   <script defer src="index.js"></script>
   <!-- Scripts End -->
 
 </head>
 <body>
-  <canvas></canvas>
+  <div class="container">
+    <canvas></canvas>
+  </div>
 </body>
 </html>
